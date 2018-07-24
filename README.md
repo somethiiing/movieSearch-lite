@@ -1,4 +1,4 @@
-### Intro
+### MovieSearch - Lite
 MovieSearch-Lite is a web app that uses The Movie Database API to allow users to search for their favorite movies by title.
 
 Features include:
@@ -28,6 +28,7 @@ Features include:
 - Debounce was implemented by scratch to help not fire off API calls after every key stroke. Currently it's set at 200ms, but could be lowered or increased based off of design preference. Debounce timer can be changed in `App.js` in `DEBOUNCE_TIMER`.
 - Pagination: As mentioned previously under challenges, pagination was one of the minor challenges I had to face. Although it's not very difficult to manually implement, I felt that doing so would've taken a little bit of time to debug and make sure all functionality was how I wanted it. But I also knew that there were probably a large number of pagination libraries implemented already. Instead of re-inventing the wheel, I decided to use third-party library, `react-paginate`. It came unstyled, so I had to implement and style that myself.
 - Loading: I added a loading spinner for better UX for the end user. It also makes sense with the debounce happening at the same time. In case network is slow, the loading spinner helps alleviate some of the boredom associated with waiting for the data to arrive.
+- Barrelling: All components are used so barrelling them inside `/components/index.js` made sense. Instead of having 5 different import statements, barrelling allows cleaner usage of the components.
 
 ### Future Improvements/Production Changes/Scaling
 - Flux Architecture: There isn't a Flux/Redux architecture implemented currently. I felt that the app was fairly simple and having everything handled inside `app`'s state would be acceptable. If more features were added, using Redux or some sort of Flux architecture might be preferred.

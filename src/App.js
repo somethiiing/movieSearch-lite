@@ -5,6 +5,7 @@ import { API_KEY } from './config';
 import './App.css';
 
 const URL = 'https://api.themoviedb.org/3/search/movie?api_key=';
+const DEBOUNCE_TIMER = 200;
 
 class App extends Component {
 
@@ -23,8 +24,7 @@ class App extends Component {
   }
 
   handleSearchChange(e) {
-    const { page } = this.state;
-    const query = e.target.value.toLowerCase();
+    const query = e.target.value;
 
     if (query !== '') {
       this.setState({ query, loading: true, page: 0 });
@@ -41,7 +41,7 @@ class App extends Component {
               this.setState({ movies: results, pageCount: total_pages, resultsCount: total_results, loading: false });
             })
             .catch( err => this.setState({ movies: [], loading: false }));}
-          , 200 );
+          , DEBOUNCE_TIMER );
     } else {
       this.setState({ query: '', movies: [], pageCount: 0, resultsCount: 0 });
     }

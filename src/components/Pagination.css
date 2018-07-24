@@ -1,0 +1,34 @@
+#react-paginate {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#react-paginate ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#react-paginate li {
+  display: inline-block;
+  color: lightgray;
+}
+
+#react-paginate a {
+  border: 1px solid lightblue;
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+#react-paginate .break a {
+  cursor: default;
+}
+
+li.selected {
+  color: white !important;
+  background-color: lightblue;
+}
